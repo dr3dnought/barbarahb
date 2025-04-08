@@ -28,11 +28,10 @@ export default async ({ searchParams }: SearchParams<{ transition?: string }>) =
             {transition === undefined && (
                 <main className={'flex h-lvh flex-col items-stretch justify-start gap-y-8 overflow-auto px-8 py-24'}>
                     <span className={'text-center'}>
-                        <h1 className={'font-heading font-semibold text-5xl'}>Anniversary</h1>
+                        <h1 className={'font-heading font-semibold text-5xl'}>Happy Birthday!</h1>
                         <h3 className={'mt-4 text-lg'}>
-                            Celebrating our love on {formatDate(env.NEXT_PUBLIC_TARGET_DATE, 'MMMM d, y')}
+                            Celebrating your day on {formatDate(env.NEXT_PUBLIC_TARGET_DATE, 'MMMM d, y')}
                         </h3>
-                        <h5 className={'text-stone-500 text-xs leading-none'}>Almost March 26</h5>
                     </span>
                     <Gallery />
                 </main>

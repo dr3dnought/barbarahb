@@ -32,11 +32,11 @@ const CountdownProvider: React.FC<CountdownProviderProps> = ({ children }) => {
                         transition={{ delay: 1 }}
                     >
                         <span className={'absolute top-24 text-center'}>
-                            <h1 className={'font-heading font-semibold text-5xl'}>Anniversary</h1>
+                            <h1 className={'font-heading font-semibold text-5xl'}>Happy Birthday!</h1>
                             <h3 className={'mt-4 text-lg'}>
-                                Celebrating our love on {formatDate(target, 'MMMM d, y')}
+                                Celebrating your day on {formatDate(target, 'MMMM d, y')}
                             </h3>
-                            <h5 className={'text-stone-500 text-xs leading-none'}>Almost March 26</h5>
+                            <h5 className={'text-stone-500 text-xs leading-none'}>Just wait...</h5>
                         </span>
 
                         <span className={'text-center'}>
