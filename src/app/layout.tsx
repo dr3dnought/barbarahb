@@ -7,8 +7,8 @@ import { CountdownProvider } from '~/features/CountdownProvider';
 import { TRPCReactProvider } from '~/trpc/react';
 
 export const metadata: Metadata = {
-    title: 'Anniversary',
-    appleWebApp: { title: 'Anniversary' },
+    title: 'Hamster Day!',
+    appleWebApp: { title: 'Happy Birthday!' },
     manifest: '/manifest.json',
     icons: [
         {
