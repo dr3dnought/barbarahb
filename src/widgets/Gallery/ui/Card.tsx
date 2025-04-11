@@ -2,8 +2,10 @@
 
 import { type Variants, motion } from 'motion/react';
 import Image from 'next/image';
+import { useMemo } from 'react';
 import { cn } from '~/lib/utils';
 import { useToggle } from '~/shared/lib/hooks';
+import { getOS } from '~/shared/lib/user-agent';
 import { clipPath } from '../config/clipPath';
 
 const cardVariants: Variants = {
@@ -41,11 +43,14 @@ export type CardProps = {
 );
 
 const Card: React.FC<CardProps> = ({ src, cover, title, description, hueA, hueB }) => {
+    const os = useMemo(() => getOS(), []);
+
     const [textMode, toggleTextMode] = useToggle(false);
     const background = `linear-gradient(235deg, ${hue(hueA)}, ${hue(hueB)})`;
 
     return (
         <motion.li
+            lang={'ru'}
             className={'relative flex w-80 items-center justify-center overflow-hidden pt-4'}
             initial={'offscreen'}
             whileInView={'onscreen'}
@@ -53,7 +58,7 @@ const Card: React.FC<CardProps> = ({ src, cover, title, description, hueA, hueB 
         >
             <div className={'absolute inset-x-0 bottom-0 h-40 w-full'} style={{ clipPath, background }} />
 
-            <motion.button
+            <motion.div
                 onClick={toggleTextMode}
                 className={'h-72 w-64'}
                 style={{ transformOrigin: '10% 60%' }}
@@ -64,13 +69,15 @@ const Card: React.FC<CardProps> = ({ src, cover, title, description, hueA, hueB 
                     className={cn(
                         'bg-gradient-to-b from-stone-50 to-stone-200 shadow-xl',
                         'absolute inset-0 size-full rounded-3xl p-2',
-                        'backface-hidden transition-transform duration-700',
-                        textMode ? 'rotate-x-45 rotate-y-180 rotate-z-12' : 'rotate-x-0 rotate-y-0 rotate-z-0',
+                        'backface-hidden transition-transform duration-1000',
+                        textMode && os === 'iOS' && '-rotate-x-45 rotate-y-180 rotate-z-12',
+                        textMode && os !== 'iOS' && 'rotate-x-45 rotate-y-180 rotate-z-12',
+                        !textMode && 'rotate-x-0 rotate-y-0 rotate-z-0',
                     )}
                 >
                     <div
                         className={cn(
-                            'relative overflow-hidden ',
+                            'relative overflow-hidden',
                             'size-full rounded-2xl bg-gradient-to-b from-stone-200 to-stone-300',
                             'flex flex-col items-center justify-center gap-y-2 px-4 py-6',
                         )}
@@ -92,8 +99,8 @@ const Card: React.FC<CardProps> = ({ src, cover, title, description, hueA, hueB 
                     className={cn(
                         'bg-gradient-to-b from-stone-50 to-stone-200 shadow-xl',
                         'absolute inset-0 size-full rounded-3xl p-2',
-                        'backface-hidden transition-transform duration-700',
-                        textMode ? '-rotate-y-0 rotate-x-0 rotate-z-0' : '-rotate-y-180 rotate-x-45 rotate-z-12',
+                        'backface-hidden transition-transform duration-1000',
+                        textMode ? 'rotate-x-0 rotate-y-0 rotate-z-0' : '-rotate-y-180 rotate-x-45 rotate-z-12',
                     )}
                 >
                     <div
@@ -103,10 +110,10 @@ const Card: React.FC<CardProps> = ({ src, cover, title, description, hueA, hueB 
                         )}
                     >
                         <h5 className={'font-heading font-semibold text-xl'}>{title}</h5>
-                        <span className={'text-balance text-sm text-stone-500'}>{description}</span>
+                        <span className={'hyphens-auto text-sm text-stone-500'}>{description}</span>
                     </div>
                 </div>
-            </motion.button>
+            </motion.div>
         </motion.li>
     );
 };

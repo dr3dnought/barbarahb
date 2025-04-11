@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Journey Map - Crypto Pay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            padding: 2rem;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .journey-map {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .stage {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .stage:hover {
+            transform: translateY(-5px);
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-number {
+            background: #4299e1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .stage-title {
+            font-size: 1.5rem;
+            color: #2b6cb0;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "•";
+            color: #4299e1;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .emotions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .emotion {
+            background: #ebf8ff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2b6cb0;
+        }
+
+        @media (min-width: 768px) {
+            .journey-map {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .journey-map {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Journey Map - Crypto Pay</h1>
+
+        <div class="journey-map">
+            <!-- Этап 1: Осведомленность -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">1</div>
+                    <h2 class="stage-title">Осведомленность</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Узнать о возможности использования криптовалют в РФ через легальные сервисы</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Поиск информации о криптовалютах</li>
+                        <li>Нахождение рекламы Crypto Pay</li>
+                        <li>Изучение отзывов и обзоров</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Реклама в соцсетях</li>
+                        <li>Статьи и обзоры в СМИ</li>
+                        <li>Рекомендации от друзей</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Интерес</span>
+                        <span class="emotion">Скептицизм</span>
+                        <span class="emotion">Надежда</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Этап 2: Регистрация -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">2</div>
+                    <h2 class="stage-title">Регистрация</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Создать аккаунт в системе Crypto Pay</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Переход на сайт</li>
+                        <li>Регистрация аккаунта</li>
+                        <li>Прохождение KYC</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Сайт Crypto Pay</li>
+                        <li>Мобильное приложение</li>
+                        <li>Поддержка клиентов</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Ожидание</span>
+                        <span class="emotion">Доверие</span>
+                        <span class="emotion">Разочарование</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Этап 3: Пополнение счета -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">3</div>
+                    <h2 class="stage-title">Пополнение счета</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Пополнить счет на криптобирже</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Выбор способа пополнения</li>
+                        <li>Перевод средств</li>
+                        <li>Ожидание зачисления</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Личный кабинет</li>
+                        <li>Уведомления</li>
+                        <li>Поддержка клиентов</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Удовлетворение</span>
+                        <span class="emotion">Беспокойство</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Этап 4: Использование средств -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">4</div>
+                    <h2 class="stage-title">Использование средств</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Использовать криптовалюту для оплаты</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Перевод средств в РНКО</li>
+                        <li>Оплата через карту МИР</li>
+                        <li>Автопополнение счета</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Мобильное приложение</li>
+                        <li>Карта МИР</li>
+                        <li>Уведомления</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Удобство</span>
+                        <span class="emotion">Доверие</span>
+                        <span class="emotion">Разочарование</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Этап 5: Поддержка -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">5</div>
+                    <h2 class="stage-title">Поддержка</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Получить помощь или оставить отзыв</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Обращение в поддержку</li>
+                        <li>Оставление отзыва</li>
+                        <li>Участие в опросах</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Сайт Crypto Pay</li>
+                        <li>Мобильное приложение</li>
+                        <li>Соцсети</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Удовлетворение</span>
+                        <span class="emotion">Разочарование</span>
+                        <span class="emotion">Лояльность</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Этап 6: Повторное использование -->
+            <div class="stage">
+                <div class="stage-header">
+                    <div class="stage-number">6</div>
+                    <h2 class="stage-title">Повторное использование</h2>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Цель пользователя:</h3>
+                    <p>Продолжать использовать сервис</p>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Действия:</h3>
+                    <ul>
+                        <li>Регулярное пополнение</li>
+                        <li>Использование карты</li>
+                        <li>Участие в акциях</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Точки контакта:</h3>
+                    <ul>
+                        <li>Уведомления</li>
+                        <li>Реклама</li>
+                        <li>Сообщества</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="section-title">Эмоции:</h3>
+                    <div class="emotions">
+                        <span class="emotion">Удовлетворение</span>
+                        <span class="emotion">Лояльность</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

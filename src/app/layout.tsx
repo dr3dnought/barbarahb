@@ -2,6 +2,7 @@ import '~/styles/globals.css';
 
 import type { Metadata } from 'next';
 import { Alice, Playfair_Display, Poppins } from 'next/font/google';
+import { Suspense } from 'react';
 import { Shadow } from '~/entities/Shadow';
 import { CountdownProvider } from '~/features/CountdownProvider';
 import { TRPCReactProvider } from '~/trpc/react';
@@ -62,10 +63,12 @@ const poppins = Poppins({
 export default ({ children }: React.PropsWithChildren) => {
     return (
         <html lang={'en'} className={`${playfairDisplay.variable} ${alice.variable} ${poppins.variable} font-alice`}>
-            <body className={'h-lvh overflow-hidden bg-gradient-to-b from-stone-50 to-pink-100'}>
-                <TRPCReactProvider>
-                    <CountdownProvider>{children}</CountdownProvider>
-                </TRPCReactProvider>
+            <body className={'h-lvh overflow-hidden bg-gradient-to-b from-stone-50 to-pink-100 text-stone-950'}>
+                <Suspense>
+                    <TRPCReactProvider>
+                        <CountdownProvider>{children}</CountdownProvider>
+                    </TRPCReactProvider>
+                </Suspense>
                 <Shadow />
             </body>
         </html>
